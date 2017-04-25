@@ -30,3 +30,34 @@ document.getElementById('os').innerHTML=`<strong>Type: </strong>
   ${system['type']} <strong>Version</strong>${system['version']}
   <strong>Hostname: </strong> ${system['hostname']}
   <strong>Temp</strong> ${system['temp']}`;
+
+let networkInterfaces =os.networkInterfaces();
+
+function showInterfaces(object) {
+    let result = "";
+    let interface, its;
+    for (let ob in object) {
+
+      if (object.hasOwnProperty(ob)) {
+
+          result += `<strong>${ob} </strong> <hr>`;
+          interface = object[ob];
+
+          for (let info in interface) {
+            if (interface.hasOwnProperty(info)) {
+              result+="<hr> <ul>";
+              its =interface[info];
+
+            for (let it in its) {
+              result += `<li>${it} :  ${its[it]}</li>`;
+              }
+            }
+            result+="</ul>";
+
+          }
+          }
+      }
+
+    return result;
+  }
+document.getElementById('network').innerHTML = showInterfaces(networkInterfaces);
