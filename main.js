@@ -60,4 +60,19 @@ function showInterfaces(object) {
 
     return result;
   }
+
 document.getElementById('network').innerHTML = showInterfaces(networkInterfaces);
+
+let userInfo = os.userInfo();
+
+function showUserInfo(object) {
+  let usrInfo="";
+  for (let ob in object) {
+
+      usrInfo+=`<strong>${ob}</strong> ${object[ob]}` ;
+
+  }
+  return usrInfo;
+}
+
+document.getElementById('user').innerHTML = showUserInfo(userInfo);
