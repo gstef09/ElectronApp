@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{
+  background:rgba(1, 10, 5, 0.88);
+  font-size: 16px;
+  font-family: 'Raleway';
+  color:#002B4D;
+}
+
+.container{
+  margin: auto;
+  padding: 5%;
+  width:  80%;
+  min-height: 500px;
+  height: auto;
+  background:#C7E7FF
+}
+h1,h2,strong{
+  font-family: "Poller One";
+
+
+}
+.title{
+  color:#30A5FF;
+  text-align: center;
+}
+.component{
+  border-radius: 10px solid rgb(15, 10, 40);
+  padding: 3%;
+  margin: auto;
+}
+strong{
+  display: list-item;
+}

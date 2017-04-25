@@ -1,0 +1,23 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Desktop application with Electron",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gstef09/ElectronApp.git"
+  },
+  "keywords": [
+    "Electron",
+    "JavaScript"
+  ],
+  "author": "Gabriel Acuña",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gstef09/ElectronApp/issues"
+  },
+  "homepage": "https://github.com/gstef09/ElectronApp#readme"
+}
