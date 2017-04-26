@@ -1,4 +1,7 @@
 const os = require('os');
+const {remote} = require('electron');
+const {BrowserWindow, dialog, shell} = remote;
+
 let cpus = os.cpus();
 
 let computer = {
@@ -76,3 +79,10 @@ function showUserInfo(object) {
 }
 
 document.getElementById('user').innerHTML = showUserInfo(userInfo);
+
+function printInfo(){
+  document.querySelector('#options').style.visibility = "hidden";
+  document.querySelector('#options > *').style.visibility = "hidden";
+  remote.getCurrentWebContents().print();
+
+}
