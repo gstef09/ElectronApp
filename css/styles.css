@@ -39,14 +39,15 @@ strong{
   width: 56%;
   height: 50px;
   background: rgba(10, 10, 10, 0.64);
-  padding: 2%;
-  
+  padding: 2%  2%  4% 2%;
+
 
 }
 .btn{
+  margin-top: 10px;
   margin-left: 20px;
   padding: 10px 20px;
-  width: 100px;
+  width: 200px;
   background: rgb(213, 223, 227);
   color:rgb(16, 109, 218);
   font-family: "Poller One";

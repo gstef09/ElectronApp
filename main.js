@@ -1,6 +1,7 @@
 const os = require('os');
+const fs = require('fs');
 const {remote} = require('electron');
-const {BrowserWindow, dialog, shell} = remote;
+const {dialog} = remote;
 
 let cpus = os.cpus();
 
@@ -85,4 +86,26 @@ function printInfo(){
   document.querySelector('#options > *').style.visibility = "hidden";
   remote.getCurrentWebContents().print();
 
+}
+
+let options = {
+  title:"Choose an directory",
+  body:"Where do you want to save the PDF file?",
+  filters:[
+    { name: 'All Files', extensions: ['*'] },
+    { name: 'PDF', extensions: ['pdf'] },
+  ],
+};
+function saveAsPDF() {
+  let path = dialog.showSaveDialog(options);
+  document.querySelector('#options').style.visibility = "hidden";
+
+  // Use default printing options
+  remote.getCurrentWebContents().printToPDF({}, (error, data) => {
+    if (error) throw error
+    fs.writeFile(path, data, (error) => {
+      if (error) throw error
+      console.log('Write PDF successfully.')
+    })
+  })
 }
